@@ -1,0 +1,25 @@
+speed = 100
+velocity = 50
+
+func WhenPressed(ui_right)
+  move speed+x(clamp.120)
+func WhenPressed(ui_up)
+  move speed+y(clamp.120)
+func WhenPressed(ui_down)
+  move speed-y(clamp.120)
+func WhenPressed(ui_left)
+  move speed-x(clamp.120)
+  
+func collision
+  if collision=true
+    collide with move_and_slide
+  else
+    wait for collison=true
+
+func Shoot
+  if KeyPressed(e)=true
+    spawn Fireball
+    get.Player.direction(x)
+    move.x(Fireball.speed*2)
+  else
+    wait for Keypressed(e)=true
