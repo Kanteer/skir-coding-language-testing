@@ -1,0 +1,22 @@
+!This is a comment. Comments are started with a ! to tell whether or not a comment is available. This is a basic script showing functions and callbacks.
+!Variables are also shown here to demonstrate how they are made.
+
+!This is an extention. It's what the script is connected to.
+extends NormPlane
+
+!This is a variable with a string in it, seperate strings with a comma, don't use spaces.
+point1 = 1,1
+point2 = 5,5
+
+!This is a fuction. This finds the two points on a 2D plane and then creates the shortest path between the two. Then it moves the player box along the shortest path until it reaches the point. The time of it depends on the number, in seconds.
+func MoveTo
+  find point1
+  find point2
+  create.ShortestPath
+  move.Player.Along(ShortestPath.time(3))
+
+!This is an else if statement. Here, it checks if a player is colliding with a wall. If not, then it waits until the player hits a wall.
+if Player.collides_with(Wall)
+  move_and_slide.Player until collision=false
+else
+  wait(until collision=true)
