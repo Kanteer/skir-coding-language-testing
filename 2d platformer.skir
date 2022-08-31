@@ -1,0 +1,5 @@
+gravity = 9.81
+speed = 100
+vrlocity = 50
+
+func keypress
