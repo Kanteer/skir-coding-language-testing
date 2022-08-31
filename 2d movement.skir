@@ -17,7 +17,7 @@ func collision
 
 func Shoot
   if KeyPressed(e)=true
-    spawn Fireball
+    spawn.Fireball
     get.Player.direction(x)
     move.x(Fireball.speed*2)
   else
