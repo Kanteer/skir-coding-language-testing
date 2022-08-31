@@ -1,5 +1,16 @@
 gravity = 9.81
 speed = 100
-vrlocity = 50
+velocity = 50
 
-func keypress
+func WhenPressed(ui_right)
+  move speed+x(clamp.120)
+func WhenPressed(ui_left)
+  move speed-x(clamp.120)
+func WhenPressed(ui_up)
+  move y+15.tween(gravity)
+  check collision
+  if collision=true
+    end
+  else collision=false
+    wait for collison=true
+
