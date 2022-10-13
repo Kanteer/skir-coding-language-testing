@@ -9,13 +9,13 @@ func WhenPressed(ui_down)
 func WhenPressed(ui_left)
   move speed-x(clamp.120)
   
-func collision
+func collision();
   if collision=true
     collide with move_and_slide
   else
     wait for collison=true
 
-func Shoot
+func Shoot();
   if KeyPressed(e)=true
     spawn.Fireball
     get.Player.direction(x)
