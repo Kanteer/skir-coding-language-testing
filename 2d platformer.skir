@@ -2,11 +2,11 @@ gravity = 9.81
 speed = 100
 velocity = 50
 
-func WhenPressed(ui_right)
+func WhenPressed(ui_right);
   move speed+x(clamp.120)
-func WhenPressed(ui_left)
+func WhenPressed(ui_left);
   move speed-x(clamp.120)
-func WhenPressed(ui_up)
+func WhenPressed(ui_up);
   move y+15.tween(gravity)
   check collision
   if collision=true
