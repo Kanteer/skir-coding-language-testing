@@ -1,12 +1,12 @@
 speed = 100
 
-func WhenPressed(ui_right)
+func WhenPressed(ui_right);
   move speed+x(clamp.120)
-func WhenPressed(ui_up)
+func WhenPressed(ui_up);
   move speed+y(clamp.120)
-func WhenPressed(ui_down)
+func WhenPressed(ui_down);
   move speed-y(clamp.120)
-func WhenPressed(ui_left)
+func WhenPressed(ui_left);
   move speed-x(clamp.120)
   
 func collision();
