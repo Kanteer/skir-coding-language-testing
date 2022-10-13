@@ -9,7 +9,7 @@ point1 = 1,1
 point2 = 5,5
 
 !This is a fuction. This finds the two points on a 2D plane and then creates the shortest path between the two. Then it moves the player box along the shortest path until it reaches the point. The time of it depends on the number, in seconds.
-func MoveTo
+func MoveTo();
   find point1
   find point2
   create.ShortestPath
