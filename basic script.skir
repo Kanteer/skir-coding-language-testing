@@ -13,7 +13,7 @@ func MoveTo();
   find point1
   find point2
   create.ShortestPath
-  move.Player.Along(ShortestPath.time(3))
+  move Player.Along(ShortestPath.time(3))
 
 !This is an else if statement. Here, it checks if a player is colliding with a wall. If not, then it waits until the player hits a wall.
 if Player.collides_with(Wall)
