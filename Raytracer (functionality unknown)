@@ -1,0 +1,67 @@
+create.window(1280, 720)
+rayAmount = window.pixels
+rayBounces = 4
+raySamples = 100
+raySampleNumber = 0
+
+getScene(Raytracing):
+  getObject.Raytracing(Sphere) = Sphere
+  getObject.Raytracing(Cube) = Cube
+  getObject.Raytracing(Cone) = Cone
+
+  getMaterial.albedo.Ratracing(albedo1) = albedo1
+  getMaterial.normal.Ratracing(normal1) = normal1
+  getMaterial.roughness.Ratracing(roughness1) = roughness1
+  getMaterial.metallic.Ratracing(metallic1) = metallic1
+  getMaterial.metallic.Ratracing(metallic2) = metallic2
+
+  setObjectMaterial(Cube).normal(normal1)
+  setObjectMaterial(Cube).roughness(roughness1)
+  setObjectMaterial(Cube).metallic(metallic1)
+  setObjectMaterial(Cube).albedo(albedo1)
+
+  setObjectMaterial(Cone).normal(normal1)
+  setObjectMaterial(Cone).roughness(roughness1)
+  setObjectMaterial(Cone).metallic(metallic1)
+  setObjectMaterial(Cone).albedo(albedo1)
+
+  setObjectMaterial(Sphere).normal(normal1)
+  setObjectMaterial(Sphere).roughness(roughness1)
+  setObjectMaterial(Sphere).metallic(metallic2)
+  setObjectMaterial(Sphere).albedo(albedo1)
+
+  create.camera(0,0)
+  setRotation.camera(0, 90, 0)
+  camera.FOV = 50
+
+getRay():
+  create.ray(rayAmount):
+    ray.position = window.pixels
+
+  ray.fire():
+    if ray.collide.Sphere():
+      ray.getPosition
+      getMaterial.pixel(Sphere)
+      raySampleNumber + 1
+    elif ray.collide.Cube():
+      ray.getPosition
+      getMaterial.pixel(Cube)
+      raySampleNumber + 1
+    elif ray.collide.Cone():
+      ray.getPosition
+      getMaterial.pixel(Cone)
+      raySampleNumber + 1
+    else():
+      return 0
+
+  if ray.collide.Object():
+    direction = Object.face.normal(getFrontFace) deflect
+    repeat rayBounces
+  else():
+    return 0
+
+  if raySampleNumber /= raySamples
+    return 0
+  else();
+    quit
+
