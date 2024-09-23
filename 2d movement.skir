@@ -10,10 +10,10 @@ func WhenPressed(ui_left);
   move speed-x(clamp.120)
   
 func collision();
-  if collision=true
+  if intersect.Object(collisionObject)=true
     collide with move_and_slide
   else
-    wait for collison=true
+    wait for intersect.Object(collisionObject)=true
 
 func Shoot();
   if KeyPressed(e)=true
